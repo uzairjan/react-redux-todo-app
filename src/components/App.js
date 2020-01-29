@@ -15,8 +15,10 @@ class App extends React.Component {
     }
 
     addTodo = (todo) => {
-      this.props.addTodo(todo);
-      this.setState({todo:''});
+      if (todo !== '') {        
+        this.props.addTodo(todo);
+        this.setState({todo:''});
+      }
     }
     
     addTodoOnKeyUp = event => {
